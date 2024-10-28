@@ -25,4 +25,9 @@ jobs:
           echo "Conectando no EC2"
           echo "${{secrets.AWS_CHAVE_PIPELINE_AWS_PEM}}" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ubuntu@"${{secrets.ssh_ubuntu}}" "
+<<<<<<< HEAD
           cd /var/www/html/;sudo git pull"          
+=======
+          cd /var/www/html/
+          git pull"          
+>>>>>>> 6df749c439a82ea3922aeb900dcdcb11f0a935ef
