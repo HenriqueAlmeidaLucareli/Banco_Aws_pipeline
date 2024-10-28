@@ -6,47 +6,24 @@ chmod 400 "chave"
 ssh -i "chave" ubuntu@ec2-54-81-132-236.compute-1.amazonaws.com
 
 ---------------------------------------
-
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install -y python3
-sudo apt-get install -y python3-pip
-sudo apt-get install git
-
-----------------------------------------
-
-git clone https://github.com/Nisflei/RPA_Python
-/home/ubuntu/RPA_Python
+sudo apt-get install apache2
  
------------------------------------------
+---------------------------------------
 
-cd <arq_git>
-cd <onde esta o html>
+cd /
+cd /var/www
+ls
+cd html/
 
-Ativar o servidor --------------------------------
+--------------------------------------
+    sudo rm index.html
 
-python3 -m http.server 8000
+--------------------------------------
+sudo git clone <?
 
---------------------------------------------------
-chmod 777 executar.sh
-chmod 777 iniciar.sh
+--------------------------------------
+sudo rm -rf /var/www/html/Banco_Aws_pipeline/
 
-cd ..
-
---Rodar automatico
-
-nano /home/ubuntu/start_script.sh
-
-#!/bin/bash
-cd /home/ubuntu/Banco_Aws_pipeline/flare-1.0.0      # Muda para o diretório Aws_pipeline
-python3 -m http.server 8000                         # Executa o script Python
-
-chmod +x /home/ubuntu/start_script.sh
-
-crontab -e
-
-1
-
-@reboot /home/ubuntu/start_script.sh
-
---agora toda vez que a pipeline for ativa ele vai alterar na pipeline 
+sudo mv /var/www/html/Banco_Aws_pipeline/flare-1.0.0/* /var/www/html/
