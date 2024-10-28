@@ -25,6 +25,6 @@ jobs:
           echo "Conectando no EC2"
           echo "${{secrets.AWS_CHAVE_PIPELINE_AWS_PEM}}" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ubuntu@"${{secrets.ssh_ubuntu}}" "
-          cd /var/www/html/
+          cd /var/www/html/Banco_Aws_pipeline/
           sudo git pull
           sudo systemctl restart apache2"
